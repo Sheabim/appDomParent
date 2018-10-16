@@ -11,12 +11,17 @@ function attachListButtons(li){
   let up = document.createElement('button');
       up.className = 'up';
       up.textContent = 'up';
+      li.appendChild(up);
+
     let down = document.createElement('button');
-      down.className = 'up';
-      down.textContent = 'up';
+      down.className = 'down';
+      down.textContent = 'down';
+      li.appendChild(down);
+
     let remove = document.createElement('button');
-      remove.className = 'up';
-      remove.textContent = 'up';
+      remove.className = 'remove';
+      remove.textContent = 'remove';
+      li.appendChild(remove);
 
 }
 
@@ -68,7 +73,9 @@ descriptionButton.addEventListener('click', () => {
 addItemButton.addEventListener('click', () => {
   let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
+
   li.textContent = addItemInput.value;
+attachListButtons(li);
   ul.appendChild(li);
   addItemInput.value = '';
 });
