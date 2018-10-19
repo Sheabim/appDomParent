@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <title>Learning About Nodes</title>
-
-  <style>
-    * { border: 2px solid #dedede; padding: 15px; margin: 15px; }
-    html { margin: 0; padding: 0; }
-    body { max-width: 600px; font-family: sans-serif; color: #333; }
-  </style>
-</head>
-
-<body>
-  <h1>Shark World</h1>
-  <p>The world's leading source on <strong>shark</strong> related information.</p>
-  <h2>Types of Sharks</h2>
-  <ul>
-    <li>Hammerhead</li>
-    <li>Tiger</li>
-    <li>Great White</li>
-  </ul>
-</body>
-
-<script>
-  const h1 = document.getElementsByTagName('h1')[0];
-  const p = document.getElementsByTagName('p')[0];
-  const ul = document.getElementsByTagName('ul')[0];
-  const body = document.getElementsByTagName('body');
-  const strong = document.getElementsByTagName('strong');
-  const html = document.getElementsByTagName('html');
-</script>
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <title>Traversing the DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Color Palette:</h1>
+      <div></div>
+      <ul class="list">
+        <li>
+          <span>Robin's Egg Blue</span>
+          #04c5e6
+        </li>
+        <li>
+          <span>Geyser</span>
+          #b7c7d0
+        </li>
+        <li>
+          <span>Jaffa</span>
+          #f36f49
+        </li>
+        <li>
+          <span>Shamrock</span>
+          #57d6ab
+        </li>
+      </ul>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
 </html>

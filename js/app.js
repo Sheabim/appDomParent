@@ -1,81 +1,31 @@
-const toggleList = document.getElementById('toggleList');
-const listDiv = document.querySelector('.list');
-const descriptionInput = document.querySelector('input.description');
-const descriptionP = document.querySelector('p.description');
-const descriptionButton = document.querySelector('button.description');
-const listUl = listDiv.querySelector('ul');
-const addItemInput = document.querySelector('input.addItemInput');
-const addItemButton = document.querySelector('button.addItemButton');
+// STARTING POINT
+const list = document.querySelector('.list');
 
-function attachListButtons(li){
-  let up = document.createElement('button');
-      up.className = 'up';
-      up.textContent = 'up';
-      li.appendChild(up);
+// 1: Store the first child of the `ul` in the variable `firstItem`
+const firstItem = list.firstElementChild;
+firstItem.style.backgroundColor = '#04c5e6';
 
-    let down = document.createElement('button');
-      down.className = 'down';
-      down.textContent = 'down';
-      li.appendChild(down);
+// 2: Using traversal, store the second list item in a variable named `nextItem`
+const nextItem = firstItem.nextElementSibling;
+nextItem.style.backgroundColor = '#b7c7d0';
 
-    let remove = document.createElement('button');
-      remove.className = 'remove';
-      remove.textContent = 'remove';
-      li.appendChild(remove);
+// 3: Store the last child of the `ul` in a variable named `lastItem`
+const lastItem = list.lastElementChild;
+lastItem.style.backgroundColor = '#57d6ab';
 
-}
+// 4: Using traversal, store the second-to-last list item in a variable named `prevItem`
+const prevItem = lastItem.previousElementSibling;
+prevItem.style.backgroundColor = '#f36f49';
 
+// 5: Store the nested div in a variable named `banner`
+const banner = list.previousElementSibling;
+banner.className = 'banner';
 
-listUl.addEventListener('click', (event) => {
-  if (event.target.tagName == 'BUTTON') {
-    if (event.target.className == 'remove') {
-      let li = event.target.parentNode;
-      let ul = li.parentNode;
-      ul.removeChild(li);
-    }
+// 6: Using traversal, store the wrapper div in a variable named `wrapper`
+const wrapper = list.parentNode;
+wrapper.style.backgroundColor = '#fcfcfc';
 
-///UP
-    if (event.target.className == 'up') {
-      let li = event.target.parentNode;
-      let prevLi = li.previousElementSibling;
-      let ul = li.parentNode;
-      if (prevLi) {
-        ul.insertBefore(li, prevLi);
-      }
-    }
-//DOWN
-    if (event.target.className == 'down') {
-      let li = event.target.parentNode;
-      let nextLi = li.nextElementSibling;
-      let ul = li.parentNode;
-      if (nextLi) {
-        ul.insertBefore(nextLi, li);
-      }
-    }
-  }
-});
+// 7: Using traversal, store the body in a variable named `body`
 
-toggleList.addEventListener('click', () => {
-  if (listDiv.style.display == 'none') {
-    toggleList.textContent = 'Hide list';
-    listDiv.style.display = 'block';
-  } else {
-    toggleList.textContent = 'Show list';
-    listDiv.style.display = 'none';
-  }
-});
-
-descriptionButton.addEventListener('click', () => {
-  descriptionP.innerHTML = descriptionInput.value + ':';
-  descriptionInput.value = '';
-});
-
-addItemButton.addEventListener('click', () => {
-  let ul = document.getElementsByTagName('ul')[0];
-  let li = document.createElement('li');
-
-  li.textContent = addItemInput.value;
-attachListButtons(li);
-  ul.appendChild(li);
-  addItemInput.value = '';
-});
+const body = wrapper.parentNode;
+body.style.backgroundColor = '#f8fdf3';
